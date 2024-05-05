@@ -42,7 +42,7 @@ Para executar este projeto localmente, siga estas etapas:
 
 ## Documentação da API
 
-A documentação completa da API está disponível em `http://localhost:3000/api-docs`.
+A documentação completa da API está disponível em `http://localhost:3000/api-docs` (A ser implementado).
 
 ## Tecnologias Utilizadas
 
@@ -50,16 +50,4 @@ A documentação completa da API está disponível em `http://localhost:3000/api
 - [Sequelize](https://sequelize.org/)
 - [PostgreSQL](https://www.postgresql.org/)
 
-## Contribuindo
 
-Se você quiser contribuir para este projeto, por favor siga estas etapas:
-
-1. Faça um fork do projeto.
-2. Crie uma branch para sua nova funcionalidade (`git checkout -b feature/nova-funcionalidade`).
-3. Faça commit de suas alterações (`git commit -am 'Adiciona nova funcionalidade'`).
-4. Faça push para a branch (`git push origin feature/nova-funcionalidade`).
-5. Crie um novo Pull Request.
-
-## Licença
-
-Este projeto é licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
