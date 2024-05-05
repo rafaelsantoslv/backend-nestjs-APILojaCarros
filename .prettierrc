@@ -1,0 +1,12 @@
+{
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "singleQuote": false, // Exemplo de configuração
+        "semi": true // Exemplo de configuração
+        // Adicione outras configurações do Prettier aqui, se necessário
+      }
+    }
+  ]
+}
