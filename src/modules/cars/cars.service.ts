@@ -1,8 +1,8 @@
 import { BadRequestException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Car } from 'src/entities/carModel';
-import { CreateCarDto } from './cars-create.dto';
-import { UpdateCarDto } from './cars-update.dto';
+import { Car } from './entities/carModel';
+import { CreateCarDto } from './dto/cars-create.dto';
+import { UpdateCarDto } from './dto/cars-update.dto';
 
 @Injectable()
 export class CarsService {

@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { CarsController } from './cars.controller';
 import { CarsService } from './cars.service'; // Importe o CarsService
 import { SequelizeModule } from '@nestjs/sequelize';
-import { Car } from 'src/entities/carModel';
+import { Car } from './entities/carModel';
 
 @Module({
   imports: [

@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, ValidationPipe, Param, Put, Delete } from '@nestjs/common'; // Importar Get do NestJS
 import { CarsService } from './cars.service';
-import { CreateCarDto } from './cars-create.dto';
-import { UpdateCarDto } from './cars-update.dto';
+import { CreateCarDto } from './dto/cars-create.dto';
+import { UpdateCarDto } from './dto/cars-update.dto';
 
 @Controller('cars')
 export class CarsController {

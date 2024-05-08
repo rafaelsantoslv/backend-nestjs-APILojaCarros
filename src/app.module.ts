@@ -3,9 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CarsModule } from './modules/cars/cars.module';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { databaseConfig } from './config/config'
+import { AuthModule } from './modules/auth/auth.module';
 @Module({
-  imports: [CarsModule, SequelizeModule.forRoot({
+  imports: [CarsModule, AuthModule, SequelizeModule.forRoot({
   dialect: 'postgres',
   host: 'localhost',
   port: 5432,
