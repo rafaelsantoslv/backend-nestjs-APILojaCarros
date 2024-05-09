@@ -10,7 +10,7 @@ export class CreateCarDto {
   modeloCar: string;
 
   @IsNotEmpty()
-  @IsInt()
+  @IsString()
   anoCar: number;
 
   @IsNotEmpty()
@@ -22,7 +22,7 @@ export class CreateCarDto {
   tipoCar: string;
 
   @IsNotEmpty()
-  @IsInt()
+  @IsString()
   portasCar: number;
 
   @IsNotEmpty()
@@ -34,7 +34,7 @@ export class CreateCarDto {
   motorCar: string;
 
   @IsNotEmpty()
-  @IsInt()
+  @IsString()
   valorCar: number;
 
   @IsNotEmpty()

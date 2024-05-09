@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { CarsModule } from './modules/cars/cars.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { AuthModule } from './modules/auth/auth.module';
+import { MulterModule } from '@nestjs/platform-express';
+import * as path from 'path';
 @Module({
   imports: [CarsModule, AuthModule, SequelizeModule.forRoot({
   dialect: 'postgres',
@@ -14,7 +16,7 @@ import { AuthModule } from './modules/auth/auth.module';
   database: 'carAPI',
   autoLoadModels: true,
   synchronize: true,
-  })],
+  }),MulterModule.register({dest: path.resolve(__dirname, '..', 'images', 'teste')})],
   controllers: [AppController],
   providers: [AppService],
 })

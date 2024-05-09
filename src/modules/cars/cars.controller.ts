@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, ValidationPipe, Param, Put, Delete } from '@nestjs/common'; // Importar Get do NestJS
+import { Controller, Get, Post, Body, ValidationPipe, Param, Put, Delete, UseInterceptors, UploadedFile } from '@nestjs/common'; // Importar Get do NestJS
 import { CarsService } from './cars.service';
 import { CreateCarDto } from './dto/cars-create.dto';
 import { UpdateCarDto } from './dto/cars-update.dto';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('cars')
 export class CarsController {
@@ -16,8 +17,9 @@ export class CarsController {
         return this.carsService.findOne(Number(id))
     }
     @Post('create')
-    async createCar(@Body(ValidationPipe) createCarDto: CreateCarDto) {
-        return this.carsService.create(createCarDto)
+    @UseInterceptors(FileInterceptor('image'))
+    async createCar(@UploadedFile() image: Express.Multer.File, @Body(ValidationPipe) createCarDto: CreateCarDto) {
+        return this.carsService.create(image, createCarDto)
     }
     @Put(':id')
     async updateCar(@Param('id') id: string, @Body() updateCarDto: UpdateCarDto){

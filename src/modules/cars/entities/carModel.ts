@@ -36,6 +36,9 @@ export class Car extends SequelizeModel {
   @Column(DataTypes.STRING)
   status: string;
 
+  @Column(DataTypes.STRING)
+  imgName
+
   @Column({ allowNull: false, type: DataTypes.DATE })
   createdAt: Date;
 
