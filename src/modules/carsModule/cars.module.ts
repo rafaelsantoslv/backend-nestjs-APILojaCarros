@@ -6,6 +6,7 @@ import { Car } from './entities/carModel';
 import { MulterModule } from '@nestjs/platform-express';
 import * as fs from 'fs';
 import * as path from 'path';
+import { UploadService } from '../uploadModule/upload.service';
 
 
 @Module({
@@ -14,7 +15,7 @@ import * as path from 'path';
     
   ],
   controllers: [CarsController], // Declare o controlador
-  providers: [CarsService], // Declare o serviço
+  providers: [CarsService, UploadService], // Declare o serviço
   exports: [CarsService]
 })
 export class CarsModule {}
