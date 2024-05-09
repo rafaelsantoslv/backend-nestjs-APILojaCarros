@@ -3,10 +3,8 @@ import { CarsController } from './cars.controller';
 import { CarsService } from './cars.service'; // Importe o CarsService
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Car } from './entities/carModel';
-import { MulterModule } from '@nestjs/platform-express';
-import * as fs from 'fs';
-import * as path from 'path';
 import { UploadService } from '../uploadModule/upload.service';
+import { LoggerService } from '../loggerModule/logger.service';
 
 
 @Module({
@@ -15,7 +13,7 @@ import { UploadService } from '../uploadModule/upload.service';
     
   ],
   controllers: [CarsController], // Declare o controlador
-  providers: [CarsService, UploadService], // Declare o serviço
+  providers: [CarsService, UploadService, LoggerService], // Declare o serviço
   exports: [CarsService]
 })
 export class CarsModule {}

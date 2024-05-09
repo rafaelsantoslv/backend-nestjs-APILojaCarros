@@ -10,7 +10,6 @@ import * as path from 'path';
 import { CarsModule } from './modules/carsModule/cars.module';
 import { AuthModule } from './modules/authModule/auth.module';
 import { MulterModule } from '@nestjs/platform-express';
-import { UploadModule } from './modules/uploadModule/upload.module';
 
 
 
@@ -25,7 +24,7 @@ import { UploadModule } from './modules/uploadModule/upload.module';
   database: 'carAPI',
   autoLoadModels: true,
   synchronize: true,
-  }),MulterModule.register({dest: path.resolve(__dirname, '..', 'images', 'teste')}), UploadModule],
+  }),MulterModule.register({dest: path.resolve(__dirname, '..', 'images', 'teste')})],
   controllers: [AppController],
   providers: [AppService],
 })
