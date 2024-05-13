@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { CreateAuthDto } from './dto/create-auth.dto';
 import { UpdateAuthDto } from './dto/update-auth.dto';
 import * as bcrypt from 'bcrypt';
@@ -15,8 +15,10 @@ export class AuthService {
       private readonly jwtService: JwtAuthService
   ){}
 
-  async create(createAuthDto: CreateAuthDto) {
+  async create(createAuthDto: CreateAuthDto, token: string) {
     try {
+      const verificaToken = await this.jwtService.validateToken(token);
+      if (!verificaToken) throw new UnauthorizedException('Token Inválido');
       const existingUser = await this.userModel.findOne({where:{email: createAuthDto.email}})
       if(existingUser) throw new BadRequestException("O email já está sendo utilizado")
 

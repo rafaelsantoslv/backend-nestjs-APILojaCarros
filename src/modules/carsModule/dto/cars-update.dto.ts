@@ -1,4 +1,4 @@
-import { IsString, IsInt, Min, Max, IsIn, IsNotEmpty } from 'class-validator';
+import { IsString, IsInt, Min, Max, IsIn, IsNotEmpty, IsJWT } from 'class-validator';
 
 export class UpdateCarDto {
     @IsNotEmpty({ message: 'A marca do carro é obrigatória' })
@@ -41,4 +41,6 @@ export class UpdateCarDto {
     @IsNotEmpty({ message: 'O status do carro é obrigatório' })
     @IsIn(['ativo', 'inativo'], { message: 'O status do carro deve ser ativo ou inativo' })
     status: string;
+    
+
 }
